@@ -7,10 +7,13 @@ import time
 
 class SIMULATION:
 
-	def __init__(self):
+	def __init__(self, directOrGUI):
 
 		# Connect to pybullet
-		self.physicsClient = p.connect(p.GUI)
+		if directOrGUI == "DIRECT":
+			self.physicsClient = p.connect(p.DIRECT)
+		else:
+			self.physicsClient = p.connect(p.GUI)
 
 		# Set additional search path
 		p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -35,6 +38,8 @@ class SIMULATION:
 			time.sleep(1/1000)
 
 
+	def Get_Fitness(self):
+		self.robot.Get_Fitness()
 
 	def __del__(self):
 
