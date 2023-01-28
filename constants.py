@@ -15,3 +15,4 @@ frequency = 1
 phaseOffset = np.pi/4
 
 numberOfGenerations = 10
+populationSize = 10

@@ -7,7 +7,7 @@ import time
 
 class SIMULATION:
 
-	def __init__(self, directOrGUI):
+	def __init__(self, directOrGUI, solutionID):
 
 		# Connect to pybullet
 		if directOrGUI == "DIRECT":
@@ -22,7 +22,7 @@ class SIMULATION:
 		p.setGravity(0,0,-9.8)
 
 		self.world = WORLD()
-		self.robot = ROBOT()
+		self.robot = ROBOT(solutionID)
 
 
 
