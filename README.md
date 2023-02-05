@@ -1,6 +1,6 @@
 # "Thing" from the Netflix show _Wednesday_ (or the Addams Family)
 
-For this assignment, I evolved a hand that could walk. This was inspired by "Thing" from the Netflix show _Wednesday_. The fitness function was a measurement of how far the hand moved in the -x direction. Hands which moved further in the -x direction had higher fitnesses. A video of a hand with a randomly generated brain vs. an eveolved brain can be seen [here](https://youtu.be/WgInskeBIAA).
+For this assignment, I evolved a hand that could walk. This was inspired by "Thing" from the Netflix show _Wednesday_. The fitness function was a measurement of how far the hand moved in the -x direction. Hands which moved further in the -x direction had higher fitnesses. A video of a hand with a randomly generated brain vs. an eveolved brain can be seen [here](https://youtu.be/WgInskeBIAA). In this simulation, a population size of 5 was evolved for 20 generations.
 
 To run the program, simply type the following into the terminal window:
 
