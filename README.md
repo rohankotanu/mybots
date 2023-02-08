@@ -42,6 +42,6 @@ The simulation was run for 10 generations with a population size of 2. Each popu
 Some example snakes can be seen in the YouTube video [here](https://www.reddit.com/r/ludobots/wiki/installation/).
 
 
-### Note
+# Note
 
 This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/).
