@@ -1,12 +1,46 @@
-# "Thing" from the Netflix show _Wednesday_ (or the Addams Family)
+# Randomly Generated 1D Morphologies
 
-For this assignment, I evolved a hand that could walk. This was inspired by "Thing" from the Netflix show _Wednesday_. The fitness function was a measurement of how far the hand moved in the -x direction. Hands which moved further in the -x direction had higher fitnesses. A video of a hand with a randomly generated brain vs. an eveolved brain can be seen [here](https://youtu.be/WgInskeBIAA). In this simulation, a population size of 5 was evolved for 20 generations.
+This program creates a randomly generated kinematic chain of blocks.
+
+## Number of Blocks
+
+The number of blocks in the chain is randomly generated, and lies in the range [3,10].
+
+## Size of Blocks
+The dimensions of each block are also randomly generates, and they lie in the range [0.2,1.2].
+
+## Locations of Sensors
+
+Whether or not each block has a sensor is randomly determined. Blocks with sensors are colored green, while blocks without sensors are colored blue.
+
+## Joint Axes
+
+The joint axes are all aligned with the y-axis, as this was found to result in the best movement.
+
+
+# Fitness
+
+The fitness function is the negative x-position of the first link (leftmost link). The farther left (negative x-direction) the snake travels, the higher its fitness value.
+
+
+# Running the code
 
 To run the program, simply type the following into the terminal window:
 
 ```bash
 $ python3 search.py
 ```
+
+
+# Simulation Structure
+
+The simulation was run for 10 generations with a population size of 2. Each population has a randomly generated snake body at the very beginning of the simulation, and that body stays constant for the population. Within each population, from generation to generation, only the brain evolves by randomly changing one of the weights between a sensor and motor neuron. Therefore, a population size of 5 would have 5 randomly generated bodies at the start of the simulation, and these 5 bodies would evolve different brains over time.
+
+
+# Demo
+
+Some example snakes can be seen in the YouTube video [here](https://www.reddit.com/r/ludobots/wiki/installation/).
+
 
 ### Note
 
