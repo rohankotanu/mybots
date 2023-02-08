@@ -18,11 +18,6 @@ Whether or not each block has a sensor is randomly determined as well. Blocks wi
 The joint axes are all aligned with the y-axis, as this was found to result in the best movement.
 
 
-# Fitness
-
-The fitness function is the negative x-position of the first link (leftmost link). The farther left (negative x-direction) the snake travels, the higher its fitness value.
-
-
 # Running the code
 
 To run the program, simply type the following into the terminal window:
@@ -30,6 +25,10 @@ To run the program, simply type the following into the terminal window:
 ```bash
 $ python3 search.py
 ```
+
+# Fitness
+
+The fitness function is the negative x-position of the first link (leftmost link). The farther left (negative x-direction) the snake travels, the higher its fitness value.
 
 
 # Simulation Structure
@@ -39,7 +38,7 @@ The simulation was run for 10 generations with a population size of 2. Each popu
 
 # Demo
 
-Some example snakes can be seen in the YouTube video [here](https://www.reddit.com/r/ludobots/wiki/installation/).
+Some example snakes can be seen in the YouTube video [here](https://youtu.be/ctL79FnjyLk).
 
 
 # Note
