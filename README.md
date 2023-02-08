@@ -7,7 +7,7 @@ This program creates a randomly generated kinematic chain of blocks.
 The number of blocks in the chain is randomly generated, and lies in the range [3,10].
 
 ## Size of Blocks
-The dimensions of each block are also randomly generates, and they lie in the range [0.2,1.2].
+The dimensions of each block are also randomly generated. The sie of each dimension lies in the range [0.2,1.2].
 
 ## Locations of Sensors
 
