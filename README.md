@@ -14,14 +14,14 @@ The dimensions of each block are also randomly generated. The size of each dimen
 ##### Joint Axes
 The joint axes are all aligned with the y-axis, as this was found to result in the best movement.
 
-##### Generating the First 2 Links
+#### Generating the First 2 Links
 
-When generating the bodies, the first 2 links are created seprately. This is because the first joint, which connects Link 1 and Link 2, is positioned relative to the previous _Link_ as opposed to the previous _Joint_.
-![First 2 Links](images/first_links.PNG "First 2 Links")
+When generating the bodies, the first 2 links are created seprately. This is because the first joint, which connects Link 1 and Link 2, is positioned relative to the previous _Link_ as opposed to the previous _Joint_.__
+![First 2 Links](images/first_two_links.PNG "First 2 Links")
 
-##### Generating All Subsequent Links
+#### Generating All Subsequent Links
 
-When generating the links after the first two links, the following positioning is used. Note that all of these coordinates are in relation to the previous (upstream) joint.
+When generating the links after the first two links, the following positioning is used. Note that all of these coordinates are in relation to the previous (upstream) joint.__
 ![All Other Links](images/subsequent_links.PNG "All Other Links")
 
 
@@ -32,7 +32,7 @@ When generating the links after the first two links, the following positioning i
 
 Whether or not each block has a sensor is randomly determined as well. Blocks with sensors are colored green, while blocks without sensors are colored blue.
 
-##### Brain Layout
+#### Brain Layout
 
 When generating the brain, only the links with sensors are given sensor neurons. However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor neuron outputs.
 ![Brain Layout](images/brain_layout.PNG "Brain Layout")
