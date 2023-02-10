@@ -31,6 +31,8 @@ When generating the links after the first two links, the following positioning i
 ![All Other Links](images/subsequent_links.PNG "All Other Links")
 
 
+<br/>
+<br/>
 
 ## Creature Brains
 
