@@ -39,6 +39,8 @@ Whether or not each block has a sensor is randomly determined as well. Blocks wi
 #### Brain Layout
 
 When generating the brain, only the links with sensors are given sensor neurons. However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor neuron outputs.
+<br/>
+<br/>
 ![Brain Layout](images/brain_layout.PNG "Brain Layout")
 
 
