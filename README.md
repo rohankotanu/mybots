@@ -14,13 +14,14 @@ The dimensions of each block are also randomly generated. The size of each dimen
 ##### Joint Axes
 The joint axes are all aligned with the y-axis, as this was found to result in the best movement.
 
+<br/>
+
 ### Generating the First 2 Links
 
 When generating the bodies, the first 2 links are created seprately. This is because the first joint, which connects Link 1 and Link 2, is positioned relative to the previous _Link_ as opposed to the previous _Joint_.
 <br/>
 <br/>
 ![First 2 Links](images/first_two_links.PNG "First 2 Links")
-
 <br/>
 
 ### Generating All Subsequent Links
@@ -29,10 +30,8 @@ When generating the links after the first two links, the following positioning i
 <br/>
 <br/>
 ![All Other Links](images/subsequent_links.PNG "All Other Links")
-
-
 <br/>
-<br/>
+
 
 ## Creature Brains
 
@@ -46,7 +45,7 @@ When generating the brain, only the links with sensors are given sensor neurons.
 <br/>
 <br/>
 ![Brain Layout](images/brain_layout.PNG "Brain Layout")
-
+<br/>
 
 
 # Running the code
