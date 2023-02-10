@@ -32,9 +32,9 @@ When generating the links after the first two links, the following positioning i
 
 ### Creature Brains
 
-##### Locations of Sensors
+#### Locations of Sensors
 
-Whether or not each block has a sensor is randomly determined as well. Blocks with sensors are colored green, while blocks without sensors are colored blue.
+Whether or not each block has a sensor is randomly determined. Blocks with sensors are colored green, while blocks without sensors are colored blue.
 
 #### Brain Layout
 
