@@ -22,7 +22,6 @@ When generating the bodies, the first 2 links are created seprately. This is bec
 ![First 2 Links](images/first_two_links.PNG "First 2 Links")
 
 <br/>
-<br/>
 
 ### Generating All Subsequent Links
 
