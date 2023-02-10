@@ -21,6 +21,9 @@ When generating the bodies, the first 2 links are created seprately. This is bec
 <br/>
 ![First 2 Links](images/first_two_links.PNG "First 2 Links")
 
+<br/>
+<br/>
+
 ### Generating All Subsequent Links
 
 When generating the links after the first two links, the following positioning is used. Note that all of these coordinates are in relation to the previous (upstream) joint.
