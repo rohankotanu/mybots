@@ -3,7 +3,7 @@
 This program creates a randomly generated kinematic chain of blocks (like a snake).
 
 
-### Creature Bodies
+## Creature Bodies
 
 ##### Number of Blocks
 The number of blocks in the chain is randomly generated, and lies in the range [3,10].
@@ -30,7 +30,7 @@ When generating the links after the first two links, the following positioning i
 
 
 
-### Creature Brains
+## Creature Brains
 
 #### Locations of Sensors
 
