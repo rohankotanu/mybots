@@ -23,6 +23,7 @@ When generating the bodies, the first 2 links are created seprately. This is bec
 <br/>
 ![First 2 Links](images/first_two_links.PNG "First 2 Links")
 <br/>
+<br/>
 
 ### Generating All Subsequent Links
 
@@ -30,6 +31,7 @@ When generating the links after the first two links, the following positioning i
 <br/>
 <br/>
 ![All Other Links](images/subsequent_links.PNG "All Other Links")
+<br/>
 <br/>
 
 
@@ -45,6 +47,7 @@ When generating the brain, only the links with sensors are given sensor neurons.
 <br/>
 <br/>
 ![Brain Layout](images/brain_layout.PNG "Brain Layout")
+<br/>
 <br/>
 
 
