@@ -22,7 +22,7 @@ Each node of the tree represents a link (rectangular prism) on the body. A link 
 
 
 | Variable | Description | Value |
-| --- | --- |
+| --- | --- | --- |
 | index | A unique integer assigned to each link in the body tree | An integer in the range [0, n-1], where n is the number of links in the tree |
 | length | The width of the link | A randomly generated number in the range [0.2, 1.2] |
 | width | The height of the link | A randomly generated number in the range [0.2, 1.2] |
@@ -36,6 +36,7 @@ Each node of the tree represents a link (rectangular prism) on the body. A link 
 
 
 __Note 1:__ The root node adds 1 to numLinks so that it represents the total number of links in the tree (not just the number of links beneath it).
+<br />
 __Note 2:__ If the root node has a sensor, it adds its own index to linksWithSensors so that the list contains the index of every link that has a sensor (not just the links beneath it that have a sensor).
 
 ## Creature Brains
@@ -55,7 +56,7 @@ When generating the brain, only the links with sensors are given sensor neurons.
 
 
 __Note 1:__ In order to make things simpler, the names of sensor neurons start at 100. They are named 100, 101, 102, ...
-
+<br />
 __Note 2:__ The name of a motor neurons is the index of the joint's child link.
 
 
