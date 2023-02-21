@@ -40,6 +40,10 @@ __Note 1:__ The root node adds 1 to numLinks so that it represents the total num
 <br />
 __Note 2:__ If the root node has a sensor, it adds its own index to linksWithSensors so that the list contains the index of every link that has a sensor (not just the links beneath it that have a sensor).
 
+
+<br/>
+
+
 ## Creature Brains
 
 ### Locations of Sensors
