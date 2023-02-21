@@ -82,7 +82,7 @@ $ python3 search.py
 
 # Fitness
 
-The fitness function is the negative x-position of the first link (leftmost link). The farther left (negative x-direction) the snake travels, the higher its fitness value.
+The fitness function is the negative x-position of the first link. The farther left (negative x-direction) the snake travels, the higher its fitness value.
 
 
 <br/>
@@ -90,7 +90,7 @@ The fitness function is the negative x-position of the first link (leftmost link
 
 # Evolutionary Setup
 
-The simulation was run for 2 generations with a population size of 2. Each population has a randomly generated body at the very beginning of the simulation, and that body stays constant for the population. Within each population, from generation to generation, only the brain evolves by randomly changing one of the weights between a sensor neuron and motor neuron. Therefore, a population size of 5 would have 5 randomly generated bodies at the start of the simulation. Each of these 5 bodies would evolve different brains over time.
+Each population has a randomly generated body at the very beginning of the simulation, and that body stays constant for the population. Within each population, from generation to generation, only the brain evolves by randomly changing one of the weights between a sensor neuron and motor neuron. Therefore, a population size of 5 would have 5 randomly generated bodies at the start of the simulation. Each of these 5 bodies would evolve different brains over time.
 
 
 <br/>
@@ -98,7 +98,7 @@ The simulation was run for 2 generations with a population size of 2. Each popul
 
 # Demo
 
-Some example creatures can be seen in the YouTube video [here](https://youtu.be/aakqaf5leJk).
+Some example creatures can be seen in the YouTube video [here](https://youtu.be/aakqaf5leJk). Because we were more interested in the bodies we could create, these simulation were only run for 2 generations with a population size of 2. 
 
 
 <br/>
