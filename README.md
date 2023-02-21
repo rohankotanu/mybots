@@ -106,4 +106,4 @@ Some example creatures can be seen in the YouTube video [here](https://youtu.be/
 
 # Note
 
-This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here] (https://github.com/jbongard/pyrosim).
+This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here](https://github.com/jbongard/pyrosim).
