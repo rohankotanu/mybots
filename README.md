@@ -23,10 +23,10 @@ Each node of the tree represents a link (rectangular prism) on the body. A link 
 
 | Variable | Description | Value |
 | --- | --- | --- |
-| index | A unique integer assigned to each link in the body tree | An integer in the range [0, n-1], where n is the number of links in the tree |
-| length | The width of the link | A randomly generated number in the range [0.2, 1.2] |
-| width | The height of the link | A randomly generated number in the range [0.2, 1.2] |
-| height | The length of the link | A randomly generated number in the range [0.2, 1.2] |
+| index | A unique integer assigned to each link in the tree | An integer in the range [0, n-1], where n is the number of links in the tree |
+| length | The length of the link | A randomly generated number in the range [0.2, 1.2] |
+| width | The width of the link | A randomly generated number in the range [0.2, 1.2] |
+| height | The height of the link | A randomly generated number in the range [0.2, 1.2] |
 | hasSensor | A boolean indicating whether or not the link has a sensor | True or False |
 | jointPos | Indicates where the link is attached to its parent (12 possible attachment configurations) | An integer in the range [0,11] |
 | jointAxis | Indicates the axis of the joint | "1 0 0", "0 1 0", or "0 0 1" |
