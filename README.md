@@ -5,7 +5,7 @@ This program creates a randomly generated kinematic chain of blocks (like a snak
 
 ## Creature Bodies
 
-The information for each body is organized in a randomly generated tree, as shown below. For now, the depth of the tree is a randomly generate integer in the range [2,4]. This range can be increased at any time.
+The information for each body is organized in a randomly generated tree, as shown below. For now, the depth of the tree is a randomly generate integer in the range [2, 4]. This range can easily be increased at any time.
 <br/>
 <br/>
 ![Body Tree](images/body_tree.PNG "Body Tree")
