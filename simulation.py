@@ -14,6 +14,7 @@ class SIMULATION:
 			self.physicsClient = p.connect(p.DIRECT)
 		else:
 			self.physicsClient = p.connect(p.GUI)
+			p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
 
 		# Set additional search path
 		p.setAdditionalSearchPath(pybullet_data.getDataPath())
@@ -23,6 +24,7 @@ class SIMULATION:
 
 		self.world = WORLD()
 		self.robot = ROBOT(solutionID, populationID)
+		self.directOrGUI = directOrGUI
 
 
 
@@ -35,7 +37,8 @@ class SIMULATION:
 
 
 			#print(t)
-			time.sleep(1/1000)
+			if self.directOrGUI == "GUI":
+				time.sleep(1/100)
 
 
 	def Get_Fitness(self):

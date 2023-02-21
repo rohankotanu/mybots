@@ -1,4 +1,5 @@
 import pyrosim.pyrosim as pyrosim
+from body import BODY
 import constants as c
 import numpy as np
 import random
@@ -33,7 +34,7 @@ class SOLUTION:
 
 	def Mutate(self):
 		randomRow = random.randint(0,self.numSensorNeurons-1)
-		randomColumn = random.randint(0,self.numLinks-2)
+		randomColumn = random.randint(0,self.root.numLinks-2)
 		self.weights[randomRow,randomColumn] = random.random()*2 - 1
 
 	def Create_World(self):
@@ -59,87 +60,152 @@ class SOLUTION:
 
 		pyrosim.Start_URDF("body" + str(self.populationID) + ".urdf")
 
+		depth = random.randint(2,4)
+		self.root = BODY(None, 0, depth, depth, None, None)
 
-		# Length of body
-		self.numLinks = random.randint(3,10)
-		self.sensorLocs = np.random.randint(2, size=self.numLinks)
+		head_length = self.root.length
+		head_width = self.root.width
+		head_height = self.root.height
+		material = "Green" if self.root.hasSensor == True else "Blue"
+		startingHeight = 2
 
-		material = "Green" if self.sensorLocs[0] == 1 else "Blue"
+		rootLinkName = "Link" + str(self.root.index)
 
-		# Head
-		pyrosim.Send_Cube(name="Link1", pos=[0,0,1] , size=[head_length,head_width,head_height], material = material, rgba = self.Get_rgba(material))
+		# Body
+		pyrosim.Send_Cube(name=rootLinkName, pos=[0,0,startingHeight] , size=[head_length,head_width,head_height], material = material, rgba = self.root.Get_rgba())
 
+		self.attachChildren(self.root, depth, startingHeight, head_length, head_width, head_height)
 
-		# Link 1
-		link_length = random.random() + 0.2
-		link_width = random.random() + 0.2
-		link_height = random.random() + 0.2
-		material = "Green" if self.sensorLocs[1] == 1 else "Blue"
-		pyrosim.Send_Joint( name = "Link1_Link2" , parent= "Link1" , child = "Link2" , type = "revolute", position = [head_length/2,0,1], jointAxis = "0 1 0")
-		pyrosim.Send_Cube(name= "Link2", pos=[link_length/2,0,0] , size=[link_length,link_width,link_height], material = material, rgba = self.Get_rgba(material))
-
-
-		prevLinkLength = link_length
-
-
-		# Additional links
-		for i in range(2,self.numLinks):
-			link_length = random.random() + 0.2
-			link_width = random.random() + 0.2
-			link_height = random.random() + 0.2
-
-			jointName = "Link" + str(i) + "_Link" + str(i+1)
-			parentName = "Link" + str(i)
-			childName = "Link" + str(i+1)
-
-			pyrosim.Send_Joint( name = jointName , parent= parentName , child = childName , type = "revolute", position = [prevLinkLength,0,0], jointAxis = "0 1 0")
-			material = "Green" if self.sensorLocs[i] == 1 else "Blue"
-			pyrosim.Send_Cube(name= childName, pos=[link_length/2,0,0] , size=[link_length,link_width,link_height], material = material, rgba = self.Get_rgba(material))
-
-			prevLinkLength = link_length
-
-		
 		pyrosim.End()
 
 	def Create_Brain(self):
 		pyrosim.Start_NeuralNetwork("brain" + str(self.myID) + ".nndf")
 
-		neuronName = 0
+		neuronName = 100
 
-		for i in range(self.numLinks):
+		for i in range(self.root.numLinks):
 
-			if self.sensorLocs[i] == 1:
-				linkName = "Link" + str(i+1)
+			if i in self.root.linksWithSensors:
+				linkName = "Link" + str(i)
 				pyrosim.Send_Sensor_Neuron(name = neuronName , linkName = linkName)
 
 				neuronName += 1
 
 
-		self.numSensorNeurons = neuronName
-
+		self.numSensorNeurons = len(self.root.linksWithSensors)
 
 		# Motor neurons
-		for i in range(1,self.numLinks):
-			jointName = "Link" + str(i) + "_Link" + str(i+1)
-			pyrosim.Send_Motor_Neuron( name = neuronName , jointName = jointName)
-
-			neuronName += 1
+		self.attachMotorNeuron(self.root)
 
 
-		self.weights = np.random.rand(self.numSensorNeurons, self.numLinks-1)*2 - 1
+		self.weights = np.random.rand(self.numSensorNeurons, self.root.numLinks-1)*2 - 1
 
 
 		for currentRow in range(self.numSensorNeurons):
-			for currentColumn in range(self.numLinks-1):
-				pyrosim.Send_Synapse( sourceNeuronName = currentRow , targetNeuronName = currentColumn+self.numSensorNeurons , weight = self.weights[currentRow][currentColumn] )
+			for currentColumn in range(self.root.numLinks-1):
+				pyrosim.Send_Synapse( sourceNeuronName = 100+currentRow , targetNeuronName = currentColumn , weight = self.weights[currentRow][currentColumn] )
 
 		pyrosim.End()
 
 
-	def Get_rgba(self, material):
-		if material == "Blue":
-			return "0 0 1.0 1.0"
-		elif material == "Green":
-			return "0 1.0 0 1.0"
-		else:
-			return "0 1.0 1.0 1.0"
+	def attachChildren(self, parent, totalDepth, startingHeight, head_length, head_width, head_height):
+
+		# Child Links
+		for i in range(len(parent.children)):
+			child = parent.children[i]
+
+			link_length = child.length
+			link_width = child.width
+			link_height = child.height
+
+			material = "Green" if child.hasSensor == True else "Blue"
+
+			if parent.depth == totalDepth:
+
+				parentLinkName = "Link" + str(parent.index)
+				jointName = "Link" + str(parent.index) + "_Link" + str(child.index)
+				linkName = "Link" + str(child.index)
+
+				posID = child.jointPos
+				jointAxis = child.jointAxis
+
+				if posID == 0:
+					jointPosition = [head_length/2,head_width/2,startingHeight]
+					linkPosition = [link_length/2,link_width/2,0]
+				elif posID == 1:
+					jointPosition = [-head_length/2,head_width/2,startingHeight]
+					linkPosition = [-link_length/2,link_width/2,0]
+				elif posID == 2:
+					jointPosition = [-head_length/2,-head_width/2,startingHeight]
+					linkPosition = [-link_length/2,-link_width/2,0]
+				elif posID == 3:
+					jointPosition = [head_length/2,-head_width/2,startingHeight]
+					linkPosition = [link_length/2,-link_width/2,0]
+				elif posID == 4:
+					jointPosition = [head_length/2,0,head_height/2+startingHeight]
+					linkPosition = [link_length/2,0,link_height/2]
+				elif posID == 5:
+					jointPosition = [0,head_width/2,head_height/2+startingHeight]
+					linkPosition = [0,link_width/2,link_height/2]
+				elif posID == 6:
+					jointPosition = [-head_length/2,0,head_height/2+startingHeight]
+					linkPosition = [-link_length/2,0,link_height/2]
+				elif posID == 7:
+					jointPosition = [0,-head_width/2,head_height/2+startingHeight]
+					linkPosition = [0,-link_width/2,link_height/2]
+				elif posID == 8:
+					jointPosition = [head_length/2,0,-head_height/2+startingHeight]
+					linkPosition = [link_length/2,0,-link_height/2]
+				elif posID == 9:
+					jointPosition = [0,head_width/2,-head_height/2+startingHeight]
+					linkPosition = [0,link_width/2,-link_height/2]
+				elif posID == 10:
+					jointPosition = [-head_length/2,0,-head_height/2+startingHeight]
+					linkPosition = [-link_length/2,0,-link_height/2]
+				elif posID == 11:
+					jointPosition = [0,-head_width/2,-head_height/2+startingHeight]
+					linkPosition = [0,-link_width/2,-link_height/2]
+
+				
+				pyrosim.Send_Joint( name = jointName , parent= parentLinkName , child = linkName , type = "revolute", position = jointPosition, jointAxis = jointAxis)
+				pyrosim.Send_Cube(name= linkName, pos=linkPosition, size=[link_length,link_width,link_height], material = material, rgba = child.Get_rgba())
+
+			else:
+				parentLinkName = "Link" + str(parent.index)
+				jointName = "Link" + str(parent.index) + "_Link" + str(child.index)
+				linkName = "Link" + str(child.index)
+
+				parentPos = parent.jointPos
+
+				if parentPos >= 4 and parentPos <= 7:
+					jointPosition = [0,0,parent.height]
+					linkPosition = [0,0,link_height/2]
+				elif parentPos == 0 or parentPos == 3:
+					jointPosition = [parent.length,0,0]
+					linkPosition = [link_length/2,0,0]
+				elif parentPos == 1 or parentPos == 2:
+					jointPosition = [-parent.length,0,0]
+					linkPosition = [-link_length/2,0,0]
+				elif parentPos >= 8:
+					jointPosition = [0,0,-parent.height]
+					linkPosition = [0,0,-link_height/2]
+
+				pyrosim.Send_Joint( name = jointName , parent= parentLinkName , child = linkName , type = "revolute", position = jointPosition, jointAxis = child.jointAxis)
+				pyrosim.Send_Cube(name= linkName, pos=linkPosition, size=[link_length,link_width,link_height], material = material, rgba = child.Get_rgba())
+
+
+			self.attachChildren(child, totalDepth, startingHeight, head_length, head_width, head_height)
+
+
+	def attachMotorNeuron(self, parent):
+
+		# Child Links
+		for i in range(len(parent.children)):
+			child = parent.children[i]
+
+			jointName = "Link" + str(parent.index) + "_Link" + str(child.index)
+			neuronName = child.index
+			
+			pyrosim.Send_Motor_Neuron(name = neuronName , jointName = jointName)
+
+			self.attachMotorNeuron(child)
