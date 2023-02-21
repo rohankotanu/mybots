@@ -34,6 +34,8 @@ Each node of the tree represents a link (rectangular prism) on the body. A link 
 | linksWithSensors | A list of all links beneath it that have sensors | List of link indices |
 | numLinks | The total number of links beneath it in the tree | An integer in the range [0, n-1], where n is the number of links in the tree |
 
+<br/>
+<br/>
 
 __Note 1:__ The root node adds 1 to numLinks so that it represents the total number of links in the tree (not just the number of links beneath it).
 <br />
