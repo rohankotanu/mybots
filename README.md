@@ -55,6 +55,7 @@ When generating the brain, only the links with sensors are given sensor neurons.
 
 
 __Note 1:__ In order to make things simpler, the names of sensor neurons start at 100. They are named 100, 101, 102, ...
+
 __Note 2:__ The name of a motor neurons is the index of the joint's child link.
 
 
