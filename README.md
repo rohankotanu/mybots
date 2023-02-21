@@ -60,9 +60,12 @@ When generating the brain, only the links with sensors are given sensor neurons.
 <br/>
 
 
-__Note 1:__ In order to make things simpler, the names of sensor neurons start at 100. They are named 100, 101, 102, ...
+__Note 1:__ In order to make things simpler, the names of sensor neurons start at 100 and are named 100, 101, 102, ...
 <br />
 __Note 2:__ The name of a motor neurons is the index of the joint's child link.
+
+
+<br/>
 
 
 # Running the code
@@ -75,14 +78,15 @@ $ python3 search.py
 
 
 <br/>
-<br/>
+
 
 # Fitness
 
 The fitness function is the negative x-position of the first link (leftmost link). The farther left (negative x-direction) the snake travels, the higher its fitness value.
 
+
 <br/>
-<br/>
+
 
 # Evolutionary Setup
 
