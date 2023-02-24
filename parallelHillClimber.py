@@ -7,6 +7,7 @@ class PARALLEL_HILL_CLIMBER:
 
 	def __init__(self):
 		os.system("rm brain*.nndf")
+		os.system("rm body*.urdf")
 		os.system("rm fitness*.txt")
 
 		self.nextAvailableID = 0

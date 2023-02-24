@@ -83,6 +83,7 @@ class SOLUTION:
 
 		neuronName = 100
 
+		# Create sensor neurons
 		for i in range(self.root.numLinks):
 
 			if i in self.root.linksWithSensors:
@@ -94,10 +95,11 @@ class SOLUTION:
 
 		self.numSensorNeurons = len(self.root.linksWithSensors)
 
-		# Motor neurons
+		# Create motor neurons
 		self.attachMotorNeuron(self.root)
 
 
+		# Assign weights to synapses
 		self.weights = np.random.rand(self.numSensorNeurons, self.root.numLinks-1)*2 - 1
 
 
