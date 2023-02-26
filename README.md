@@ -31,10 +31,10 @@ Each node of the tree represents a link (rectangular prism) on the body. A link 
 | jointPos | Indicates where the link is attached to its parent (12 possible attachment configurations) | An integer in the range [0,11] |
 | jointAxis | Indicates the axis of the joint | "1 0 0", "0 1 0", or "0 0 1" |
 | depth | The depth of the link in the tree. This is sort of an "inverse depth," as the bottom-most link has a depth of 1. | An integer in the range [1, n], where n is the total depth of the tree |
-| totalDepth | The total depth of the body tree. | An integer in the range [2, 5] |
-| children | A list of child links | The root node can have 1-4 child links, while all other nodes can only have 0 or 1 |
-| linksBelow | A list containing the link's own index as well as all the indices of it descendent links | List of node indices |
-| linksWithSensors | A dictionary whose keys are the indices of all the descendent links that have sensors (including its own index if it has a sensor). The associated values are randomly generated weights in the range [-1, 1] | Dictionary with link indices as keys and random numbers in the range [-1, 1] as values. |
+| totalDepth | The total depth of the body tree | An integer in the range [2, 5] |
+| children | A list of direct child links | The root node can have 1-4 child links, while all other nodes can only have 0 or 1 |
+| linksBelow | A list containing the link's own index as well as all the indices of it descendent links | List of link indices |
+| linksWithSensors | A dictionary whose keys are the indices of all the descendent links that have sensors (including its own index if it has a sensor). The associated values are randomly generated weights in the range [-1, 1] | Dictionary with link indices as keys and random numbers in the range [-1, 1] as values |
 
 <br/>
 
@@ -54,7 +54,7 @@ __Note 3:__ The keys in the root node's *linksWithSensors* dictionary encompasse
 
 Whether or not each block has a sensor is randomly determined. Blocks with sensors are colored green, while blocks without sensors are colored blue.
 
-### Brain Layout
+### Local Brain
 
 When generating the brain, only the links with sensors are given sensor neurons (a list of such links is contained within the keys of the root node's *linksWithSensors* dictionary). However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor values of the descendent links. The associated weights are taken from the *linksWithSensors* dictionary of the joint's child link. An example of this is shown below.
 <br/>
