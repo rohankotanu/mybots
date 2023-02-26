@@ -56,6 +56,8 @@ Whether or not each block has a sensor is randomly determined. Blocks with senso
 
 ### Local Brain
 
+All of the information for the brain is contained within the link nodes. Most of this data is stored within the *linksWithSensors* dictionaries, which contain link indices as keys and weights as the corresponding values. When a link is added or removed, this change is propagated through the tree by altering the relevant *linksWithSensors* dictionaries.
+
 When generating the brain, only the links with sensors are given sensor neurons (a list of such links is contained within the keys of the root node's *linksWithSensors* dictionary). However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor values of the descendent links. The associated weights are taken from the *linksWithSensors* dictionary of the joint's child link. An example of this is shown below.
 <br/>
 <br/>
