@@ -1,6 +1,26 @@
 # Randomly Generated 1D Morphologies
 
-This program creates a randomly generated kinematic chain of blocks (like a snake).
+This program evolves a 3D morphology and associated brain for the purposes of locomotion.
+
+
+<br/>
+
+
+# Running the code
+
+To run the program, simply type the following into the terminal window:
+
+```bash
+$ python3 search.py
+```
+
+
+# Demo
+
+An exampled of a randomly generated creature vs. an evolved creature can be seen [here](https://youtu.be/V1Dc-OBX-d0).
+
+
+<br/>
 
 
 ## Creature Bodies
@@ -94,18 +114,6 @@ __Neuron Naming Convention:__
 <br/>
 
 
-# Running the code
-
-To run the program, simply type the following into the terminal window:
-
-```bash
-$ python3 search.py
-```
-
-
-<br/>
-
-
 # Fitness
 
 The fitness function is the negative x-position of the first link. The farther left (negative x-direction) the snake travels, the higher its fitness value. The goal of this fitness function is to evolve locomotion in our creatures.
@@ -125,12 +133,7 @@ Each population has a randomly generated body and brain at the very beginning of
 <br/>
 
 
-# Demo
 
-An exampled of a randomly generated creature vs. an evolved creature can be seen [here](https://youtu.be/V1Dc-OBX-d0).
-
-
-<br/>
 
 
 # Note
