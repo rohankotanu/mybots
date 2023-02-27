@@ -8,20 +8,23 @@ import os
 
 class SOLUTION:
 
-	def __init__(self, nextAvailableID, populationID):
+	def __init__(self, nextAvailableID):
 
 		self.myID = nextAvailableID
-		self.populationID = populationID
-		self.Create_Body()
+
+		depth = random.randint(2,5)
+		self.root = BODY(None, 0, depth, depth, None, None)
+		
 
 	def Set_ID(self, id):
 		self.myID = id
 		
 	def Start_Simulation(self, directOrGUI):
 		self.Create_World()
+		self.Create_Body()
 		self.Create_Brain()
-		os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " " + str(self.populationID) + " 2&>1 &")
-		#os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " " + str(self.populationID) + " &")
+		os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " 2&>1 &")
+		#os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID)  + " &")
 
 	def Wait_For_Simulation_To_End(self):
 		fitnessFileName = "fitness" + str(self.myID) + ".txt"
@@ -33,9 +36,7 @@ class SOLUTION:
 		os.system("rm fitness" + str(self.myID) + ".txt")
 
 	def Mutate(self):
-		randomRow = random.randint(0,self.numSensorNeurons-1)
-		randomColumn = random.randint(0,self.root.numLinks-2)
-		self.weights[randomRow,randomColumn] = random.random()*2 - 1
+		self.root.Mutate()
 
 	def Create_World(self):
 		length = 1
@@ -58,10 +59,7 @@ class SOLUTION:
 		head_height = random.random() + 0.2
 
 
-		pyrosim.Start_URDF("body" + str(self.populationID) + ".urdf")
-
-		depth = random.randint(2,4)
-		self.root = BODY(None, 0, depth, depth, None, None)
+		pyrosim.Start_URDF("body" + str(self.myID) + ".urdf")
 
 		head_length = self.root.length
 		head_width = self.root.width
@@ -74,36 +72,26 @@ class SOLUTION:
 		# Body
 		pyrosim.Send_Cube(name=rootLinkName, pos=[0,0,startingHeight] , size=[head_length,head_width,head_height], material = material, rgba = self.root.Get_rgba())
 
-		self.attachChildren(self.root, depth, startingHeight, head_length, head_width, head_height)
+		self.attachChildren(self.root, self.root.depth, startingHeight, head_length, head_width, head_height)
 
 		pyrosim.End()
 
 	def Create_Brain(self):
 		pyrosim.Start_NeuralNetwork("brain" + str(self.myID) + ".nndf")
 
-		neuronName = 100
 
-		for i in range(self.root.numLinks):
-
-			if i in self.root.linksWithSensors:
-				linkName = "Link" + str(i)
-				pyrosim.Send_Sensor_Neuron(name = neuronName , linkName = linkName)
-
-				neuronName += 1
+		for i in self.root.linksWithSensors:
+			linkName = "Link" + str(i)
+			pyrosim.Send_Sensor_Neuron(name = i+100 , linkName = linkName)
 
 
 		self.numSensorNeurons = len(self.root.linksWithSensors)
 
 		# Motor neurons
-		self.attachMotorNeuron(self.root)
+		self.attachMotorNeurons(self.root)
 
-
-		self.weights = np.random.rand(self.numSensorNeurons, self.root.numLinks-1)*2 - 1
-
-
-		for currentRow in range(self.numSensorNeurons):
-			for currentColumn in range(self.root.numLinks-1):
-				pyrosim.Send_Synapse( sourceNeuronName = 100+currentRow , targetNeuronName = currentColumn , weight = self.weights[currentRow][currentColumn] )
+		# Attach synapses
+		self.attachSynapses(self.root)
 
 		pyrosim.End()
 
@@ -197,7 +185,7 @@ class SOLUTION:
 			self.attachChildren(child, totalDepth, startingHeight, head_length, head_width, head_height)
 
 
-	def attachMotorNeuron(self, parent):
+	def attachMotorNeurons(self, parent):
 
 		# Child Links
 		for i in range(len(parent.children)):
@@ -208,4 +196,16 @@ class SOLUTION:
 			
 			pyrosim.Send_Motor_Neuron(name = neuronName , jointName = jointName)
 
-			self.attachMotorNeuron(child)
+			self.attachMotorNeurons(child)
+
+
+	def attachSynapses(self, parent):
+
+		# Child Links
+		for child in parent.children:
+
+			for index in child.linksWithSensors:
+				pyrosim.Send_Synapse( sourceNeuronName = index+100 , targetNeuronName = child.index , weight = child.linksWithSensors[index] )
+
+
+			self.attachSynapses(child)

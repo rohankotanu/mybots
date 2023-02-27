@@ -8,9 +8,9 @@ import os
 
 class ROBOT:
 
-	def __init__(self, solutionID, populationID):
+	def __init__(self, solutionID):
 
-		self.robotId = p.loadURDF("body" + populationID + ".urdf")
+		self.robotId = p.loadURDF("body" + solutionID + ".urdf")
 		self.nn = NEURAL_NETWORK("brain" + solutionID + ".nndf")
 		self.solutionID = solutionID
 
@@ -20,6 +20,7 @@ class ROBOT:
 		self.Prepare_to_Sense()
 		self.Prepare_to_Act()
 
+		os.system("rm body" + solutionID + ".urdf")
 		os.system("rm brain" + solutionID + ".nndf")
 
 

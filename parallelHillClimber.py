@@ -1,5 +1,7 @@
 from solution import SOLUTION
 import constants as c
+import numpy as np
+import pickle
 import copy
 import os
 
@@ -7,28 +9,31 @@ class PARALLEL_HILL_CLIMBER:
 
 	def __init__(self):
 		os.system("rm brain*.nndf")
+		os.system("rm body*.urdf")
 		os.system("rm fitness*.txt")
 
 		self.nextAvailableID = 0
 		self.parents = {}
 
 		for populationID in range(c.populationSize):
-			self.parents[populationID] = SOLUTION(self.nextAvailableID, populationID)
+			self.parents[populationID] = SOLUTION(self.nextAvailableID)
 			self.nextAvailableID += 1
+
+		self.fitness_over_time = np.zeros((c.populationSize, c.numberOfGenerations))
 
 	def Evolve(self):
 
-		self.Evaluate(self.parents)
+		self.Evaluate(self.parents, 0)
 
 		for currentGeneration in range(c.numberOfGenerations):
-			self.Evolve_For_One_Generation()
+			self.Evolve_For_One_Generation(currentGeneration)
 
-	def Evolve_For_One_Generation(self):
+	def Evolve_For_One_Generation(self, currentGeneration):
 		self.Spawn()
 		self.Mutate()
-		self.Evaluate(self.children)
+		self.Evaluate(self.children, currentGeneration)
 		self.Print()
-		self.Select()
+		self.Select(currentGeneration)
 
 	def Spawn(self):
 		self.children = {}
@@ -42,17 +47,21 @@ class PARALLEL_HILL_CLIMBER:
 		for key in self.children:
 			self.children[key].Mutate()
 
-	def Evaluate(self, solutions):
-		for key in self.parents:
+	def Evaluate(self, solutions, currentGeneration):
+		print("Generaton " + str(currentGeneration) + ":")
+		for key in solutions:
 			solutions[key].Start_Simulation("DIRECT")
 
-		for key in self.parents:
+		for key in solutions:
 			solutions[key].Wait_For_Simulation_To_End()
 
-	def Select(self):
-		for key in self.parents:
-			if self.parents[key].fitness > self.children[key].fitness: # If the parent does worse, since more negative is better
-				self.parents[key] = self.children[key]
+	def Select(self, currentGeneration):
+		for populationID in self.parents:
+			if self.parents[populationID].fitness > self.children[populationID].fitness: # If the parent does worse, since more negative is better
+				self.parents[populationID] = self.children[populationID]
+				self.fitness_over_time[populationID][currentGeneration] = -self.children[populationID].fitness
+			else:
+				self.fitness_over_time[populationID][currentGeneration] = -self.parents[populationID].fitness
 
 	def Print(self):
 		print("\n")
@@ -72,4 +81,6 @@ class PARALLEL_HILL_CLIMBER:
 				best_fitness = self.parents[key].fitness
 				fittest = key
 
+		# Save fittest solution and show simulation in GUI
+		pickle.dump(self.parents[fittest], open( "fittest.p", "wb" ) )
 		self.parents[fittest].Start_Simulation("GUI")
