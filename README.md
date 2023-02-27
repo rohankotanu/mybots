@@ -113,7 +113,7 @@ The fitness function is the negative x-position of the first link. The farther l
 
 # Evolutionary Setup
 
-Each population has a randomly generated body at the very beginning of the simulation, and that body gets mutated using the mutations listed above. An example simulation was run for 1,000 generations using a population size of 5. The fitness over time for each of the 5 populations is plotted below:
+Each population has a randomly generated body and brain at the very beginning of the simulation. This body/brain gets mutated using the mutations listed above. An example simulation was run for 1,000 generations using a population size of 5. The fitness over time for each of the 5 populations is plotted below:
 
 <br/>
 
