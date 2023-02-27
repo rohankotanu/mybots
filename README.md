@@ -58,7 +58,7 @@ Whether or not each block has a sensor is randomly determined. Blocks with senso
 
 All of the information for the brain is contained within the link nodes. Most of this data is stored within the *linksWithSensors* dictionaries, which contain link indices as keys and weights as the corresponding values. When a link is added or removed, this change is propagated through the tree by altering the relevant *linksWithSensors* dictionaries.
 
-When generating the brain, only the links with sensors are given sensor neurons (a list of such links is contained within the keys of the root node's *linksWithSensors* dictionary). However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor values of the descendent links. The associated weights are taken from the *linksWithSensors* dictionary of the joint's child link. An example of this is shown below.
+When generating the brain, only the links with sensors are given sensor neurons (a list of such links is contained within the keys of the root node's *linksWithSensors* dictionary). However, all joints are given motor neurons. The activation of each motor neuron is a weighted sum of all the sensor values of its descendent links. The associated weights are taken from the *linksWithSensors* dictionary of the joint's child link. An example of this is shown below.
 <br/>
 <br/>
 ![Local Brain Layout](images/local_brain_diagram.PNG "Local Brain Layout")
@@ -68,9 +68,9 @@ When generating the brain, only the links with sensors are given sensor neurons 
 <br/>
 
 
-__Note 1:__ The name of a motor neuron is the index of the joint's child link.
-<br />
-__Note 2:__ The names of a sensor neuron is equal to the index of the link + 100, in order to prevent overlap with the names of motor neurons.
+__Neuron Naming Convention:__
+- The name of a motor neuron is the index of the joint's child link.
+- The names of a sensor neuron is equal to the index of the link + 100, in order to prevent overlap with the names of motor neurons.
 
 
 <br/>
