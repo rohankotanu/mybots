@@ -88,7 +88,7 @@ __Neuron Naming Convention:__
 | Change joint axis | The joint axis between the link and its parent is changed. | 0.2 |
 | Add sensor | A sensor is added to the link if it didn't already have one. | 0.2 |
 | Remove sensor | The sensor is removed from the link if it previously had one. | 0.2 |
-| Alter synapse weight | A synapse weight is changed to a new value in the range [-1, 1]. | 0.1 |
+| Alter synapse weight | The synapse weight is changed to a new value in the range [-1, 1]. | 0.1 |
 
 
 # Running the code
@@ -116,7 +116,7 @@ The fitness function is the negative x-position of the first link. The farther l
 Each population has a randomly generated body at the very beginning of the simulation, and that body gets mutated using the mutations listed above. An example simulation was run for 1,000 generations using a population size of 5. The fitness over time for each of the 5 populations is plotted below:
 
 <br/>
-<br/>
+
 ![Evolution Plot](images/evolution_plot.PNG "Evolution Plot")
 <br/>
 <br/>
