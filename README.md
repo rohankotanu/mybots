@@ -105,7 +105,7 @@ $ python3 search.py
 
 # Fitness
 
-The fitness function is the negative x-position of the first link. The farther left (negative x-direction) the snake travels, the higher its fitness value.
+The fitness function is the negative x-position of the first link. The farther left (negative x-direction) the snake travels, the higher its fitness value. The goal of this fitness function is to evolve locomotion in our creatures.
 
 
 <br/>
@@ -124,7 +124,7 @@ Each population has a randomly generated body and brain at the very beginning of
 
 # Demo
 
-Some example creatures can be seen in the YouTube video [here](https://youtu.be/aakqaf5leJk). Because we were more interested in the bodies we could create, these simulation were only run for 2 generations with a population size of 2. 
+An exampled of a randomly generated creature vs. an evolved creature can be seen [here](https://youtu.be/V1Dc-OBX-d0).
 
 
 <br/>
