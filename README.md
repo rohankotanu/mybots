@@ -91,6 +91,9 @@ __Neuron Naming Convention:__
 | Alter synapse weight | The synapse weight is changed to a new value in the range [-1, 1]. | 0.1 |
 
 
+<br/>
+
+
 # Running the code
 
 To run the program, simply type the following into the terminal window:
