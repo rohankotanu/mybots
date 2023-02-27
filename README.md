@@ -6,7 +6,7 @@ This program evolves a 3D morphology and associated brain for the purposes of lo
 <br/>
 
 
-# Running the code
+## Running the code
 
 To run the program, simply type the following into the terminal window:
 
@@ -18,7 +18,7 @@ $ python3 search.py
 <br/>
 
 
-# Demo
+## Demo
 
 An exampled of a randomly generated creature vs. an evolved creature can be seen [here](https://youtu.be/V1Dc-OBX-d0).
 
