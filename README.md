@@ -1,4 +1,4 @@
-# Randomly Generated 1D Morphologies
+# Evolving 3D Morphologies for Locomotion
 
 This program evolves a 3D morphology and associated brain for the purposes of locomotion.
 
