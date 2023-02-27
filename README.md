@@ -80,13 +80,14 @@ __Neuron Naming Convention:__
 
 | Mutation | Description | Probability |
 | --- | --- | --- |
-| Remove a link | The link and all of its descendent links are removed from the tree. The *linksWithSensors* dictionary and *linksBelow* list of all the ancestor links are updated accordingly. | 0.1 |
+| Remove a link | The link and all of its descendent links are removed from the tree. The *linksWithSensors* dictionary and *linksBelow* list belonging to all the ancestor nodes of the removed link are updated accordingly. | 0.1 |
 | Add a link | A link is added to the tree. | 0.1 |
 | Change link length | The length of the link is changed to a randomly generated number in the range [0.2, 1.2]. | 0.3 |
 | Change link width | The width of the link is changed to a randomly generated number in the range [0.2, 1.2]. | 0.3 |
 | Change link height | The height of the link is changed to a randomly generated number in the range [0.2, 1.2]. | 0.3 |
 | Change joint axis | The joint axis between the link and its parent is changed. | 0.2 |
 | Add sensor | A sensor is added to the link if it didn't already have one. | 0.2 |
+| Remove sensor | The sensor is removed from the link if it previously had one. | 0.2 |
 | Alter synapse weight | A synapse weight is changed to a new value in the range [-1, 1]. | 0.1 |
 
 
