@@ -65,9 +65,8 @@ The Parallel Hill Climber starts off with 25 individuals. Each individual is in 
 
 A simplified illustration of this evolutionary algorithm is shown below:
 
-<!-- <br/>
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
-<br/> -->
+![Parallel Hill Climber Diagram](images/PHC_Diagram.png "Parallel Hill Climber Diagram")
+<br/>
 
 <br/>
 
@@ -91,9 +90,8 @@ Therefore, I modified this algorithm so that each individual chosen to move onto
 
 An illustration of this evolutionary algorithm is shown below:
 
-<!-- <br/>
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
-<br/> -->
+![(μ,λ) Evolutionary Algorithm Diagram](images/ML_Diagram.png "(μ,λ) Evolutionary Algorithm Diagram")
+<br/>
 
 <br/>
 
@@ -106,6 +104,8 @@ Next, all of these 12 individuals have a child. At this point we have the 12 bes
 
 An illustration of this evolutionary algorithm is shown below:
 
+![Age-Fitness Pareto Optimization](images/AFPO_Diagram.png "Age-Fitness Pareto Optimization")
+<br/>
 
 ### Why Age-Fitness Pareto Optimization Is Beneficial
 
