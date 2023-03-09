@@ -2,6 +2,8 @@
 
 This final project compares different evolutionary algorithms to see which can develop the best creatures for locomotion.
 
+This project used a total of (3 evolutionary algorithms) x (5 trials/evolutionary algorithm) x (200 generations/trial) x (25 individuals/generation) = **75,000 SIMULATIONS!!!**
+
 
 <br/>
 
@@ -122,11 +124,12 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 | Trial | Parallel Hill Climber | (μ,λ) | Age-Pareto Fitness Optimization |
 | --- | --- | --- | --- |
-| Trial 1 | 9.220 | 10.531 | 10.070 |
-| Trial 2 | 9.276 | 8.319  | 10.809 |
-| Trial 3 | 8.750 | 4.345  | 0 |
-| Trial 4 | 9.344 | 8.141  | 0 |
-| Trial 5 | 9.508 | 8.169  | 0 |
+| **Trial 1** | 9.220 | 10.531 | 10.070 |
+| **Trial 2** | 9.276 | 8.319  | 10.809 |
+| **Trial 3** | 8.750 | 4.345  | 10.169 |
+| **Trial 4** | 9.344 | 8.141  | 10.083 |
+| **Trial 5** | 9.508 | 8.169  | 10.297 |
+| **Average** | 9.220 | 7.901  | 10.286 |
 
 <br/>
 
@@ -164,15 +167,15 @@ The following table lists the best fitness achieved by the end of 200 generation
 ### Age-Pareto Fitness Optimization
 *How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of the plot (i.e. it's not branching off another line), that line represents a randomly generated solution. If a line ends randomly, it means that the individual was not fit enough to survive.
 
-![(μ,λ) Trial 1](images/AFPO%20Plot%201.png "(μ,λ) Trial 1")
+![AFPO Trial 1](images/AFPO%20Plot%201.png "AFPO Trial 1")
 <br/>
-![(μ,λ) Trial 2](images/AFPO%20Plot%202.png "(μ,λ) Trial 2")
+![AFPO Trial 2](images/AFPO%20Plot%202.png "AFPO Trial 2")
 <br/>
-![(μ,λ) Trial 3](images/AFPO%20Plot%203.png "(μ,λ) Trial 3")
+![AFPO Trial 3](images/AFPO%20Plot%203.png "AFPO Trial 3")
 <br/>
-![(μ,λ) Trial 4](images/AFPO%20Plot%204.png "(μ,λ) Trial 4")
+![AFPO Trial 4](images/AFPO%20Plot%204.png "AFPO Trial 4")
 <br/>
-![(μ,λ) Trial 5](images/AFPO%20Plot%205.png "(μ,λ) Trial 5")
+![AFPO Trial 5](images/AFPO%20Plot%205.png "AFPO Trial 5")
 <br/>
 <br/>
 
