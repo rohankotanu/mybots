@@ -122,7 +122,7 @@ The reason this algorithm is so good is that, by introducing random creatures in
 
 The following table lists the best fitness achieved by the end of 200 generations in each of the 5 trials that I ran using each evolutionary algorithm:
 
-| Trial | Parallel Hill Climber | (μ,λ) | Age-Pareto Fitness Optimization |
+| Trial | Parallel Hill Climber | (μ,λ) | Age-Fitness Pareto Optimization |
 | --- | --- | --- | --- |
 | **Trial 1** | 9.220 | 10.531 | 10.070 |
 | **Trial 2** | 9.276 | 8.319  | 10.809 |
@@ -132,6 +132,10 @@ The following table lists the best fitness achieved by the end of 200 generation
 | **Average** | 9.220 | 7.901  | 10.286 |
 
 <br/>
+
+On average, the Age-Pareto Fitness Optimization produces the fittest creature. Surprisingly, the Parallel Hill Climber produced more consistent results and a higher average fitness than the (μ,λ) Evolutionary Algorithm.
+
+Plots from all 15 trials (5 from each evolutionary algorithm) are shown below.
 
 ### Parallel Hill Climber
 
