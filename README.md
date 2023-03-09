@@ -53,13 +53,16 @@ When testing these algorithms for many generations, the evolutionary algorithm e
 
 # Evolutionary Methods
 
-I tested 3 different evolutionary methods. Each method had a population size of 25 and was run for 200 generations. I tested each method 5 times, each with a different random seed.
+I tested 3 different evolutionary methods. Each method used a population size of 25 and was run for 200 generations. I tested each method 5 times, each with a different random seed.
 
 <br/>
 
 ## Parallel Hill Climber
 
 The Parallel Hill Climber starts off with 25 individuals. Each individual is in a "silo," meaning that it does not interact with the other individuals in the population. In each generation, the parents have children, and the parent is compared against its child. Whichever has a higher fitness, the parent or the child, moves on to the next generation.
+
+A simplified illustration of this evolutionary algorithm is shown below:
+
 <!-- <br/>
 ![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
 <br/> -->
@@ -77,12 +80,14 @@ For our experiments, we used **μ = 5** and **λ = 25**, meaning that our popula
 
 Typically, each individual chosen to move onto the next generation would have **λ/μ - 1** offspring. In this case, that would be **25/5 -1 = 4** offspring per parent. This way, the total population would be *5 parents from the previous generation + (4 offspring/parent) x (5 parents) = 5 + 20 = 25 total individuals.* Thus, the population size stays constant throughout the generations.
 
-Unfortunately, this leads to a lack of genetic diversity. In the figure below, each of the starting individuals is given a different color, and every future descendent of that individual is given the same color. From this, we can see that after about the 5th generation, only the yellow lineage prevails and all the other lineages die out. This leads to a lack of genetic diversity, which is very important in evolution.
+Unfortunately, this leads to a lack of genetic diversity. In the figure below, each of the starting individuals is given a different color, and every future descendent of that individual is given the same color. From this, we can see that after about the 5th generation, only the yellow lineage prevails and all the other lineages die out. This leads to a lack of genetic diversity, and genetic diversity is very critical for evolution.
 
 ![Mu Lambda Vanilla](images/ML_Vanilla.png "Mu Lambda Vanilla")
 <br/>
 
 Therefore, I modified this algorithm so that each individual chosen to move onto the next generation would have **λ/μ - 2** offspring. In this case, that would be **25/5 - 2 = 3** offspring per parent. Then, I planted *μ = 5* completely new, random creatures into the population. This way, the total population would be *5 individuals from the previous generation + (3 offspring/parent) x (5 parents) + 5 new/random individuals = 5 + 15 + 5 = 25 total individuals.* Thus, the population size stays constant throughout the generations.
+
+An illustration of this evolutionary algorithm is shown below:
 
 <!-- <br/>
 ![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
@@ -95,6 +100,8 @@ Therefore, I modified this algorithm so that each individual chosen to move onto
 For Age-Pareto Fitness Optimization, I once again began with a population size of 25. From this population, I chose the 12 best individuals through the following process: I gathered the individuals along the Pareto front, which have a Pareto level of 0. If I still don't have 12 individuals, I continue recruiting individuals with a Pareto level of 1, then a Pareto level of 2, and so on until I have a group of 12 individuals.
 
 Next, all of these 12 individuals have a child. At this point we have the 12 best individuals from the previous generation (based on Pareto levels) and each of their children, so *12 + 12 = 24 individuals.* In order to maintain a population size of 25 in each generation, I add one new, randomly generated individual to this group. This way, each generation has 25 individuals: 24 related to the previous generation and 1 brand new creature.
+
+An illustration of this evolutionary algorithm is shown below:
 
 <!-- <br/>
 ![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
@@ -114,7 +121,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 | Trial 2 | 9.276 | 8.319  | 0 |
 | Trial 3 | 8.750 | 4.345  | 0 |
 | Trial 4 | 9.344 | 8.141  | 0 |
-| Trial 5 | 9.508 | 0      | 0 |
+| Trial 5 | 9.508 | 8.169  | 0 |
 
 <br/>
 
