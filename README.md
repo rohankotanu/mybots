@@ -122,13 +122,13 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 *How to interpret the graphs:* Each line represents a separate hill climber. For a parallel hill climber with a population size of 25, there are 25 separate hill climbers evolving in parallel.
 
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%204.png "Parallel Hill Climber Trial 1")
+![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.png "Parallel Hill Climber Trial 1")
 <br/>
-![Parallel Hill Climber Trial 2](images/PHC%20Plot%201.png "Parallel Hill Climber Trial 2")
+![Parallel Hill Climber Trial 2](images/PHC%20Plot%202.png "Parallel Hill Climber Trial 2")
 <br/>
-![Parallel Hill Climber Trial 3](images/PHC%20Plot%202.png "Parallel Hill Climber Trial 3")
+![Parallel Hill Climber Trial 3](images/PHC%20Plot%203.png "Parallel Hill Climber Trial 3")
 <br/>
-![Parallel Hill Climber Trial 4](images/PHC%20Plot%203.png "Parallel Hill Climber Trial 4")
+![Parallel Hill Climber Trial 4](images/PHC%20Plot%204.png "Parallel Hill Climber Trial 4")
 <br/>
 ![Parallel Hill Climber Trial 5](images/PHC%20Plot%205.png "Parallel Hill Climber Trial 5")
 <br/>
@@ -137,13 +137,13 @@ The following table lists the best fitness achieved by the end of 200 generation
 ### (μ,λ) Evolutionary Algorithm
 *How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of the plot (i.e. it's not branching off another line), that line represents a randomly generated solution. If a line ends randomly, it means that the individual was not fit enough to survive.
 
-![(μ,λ) Trial 1](images/ML%20Plot%201.png "(μ,λ) Trial 1")
+![(μ,λ) Trial 1](images/ML%20Plot%204.png "(μ,λ) Trial 1")
 <br/>
-![(μ,λ) Trial 2](images/ML%20Plot%202.png "(μ,λ) Trial 2")
+![(μ,λ) Trial 2](images/ML%20Plot%201.png "(μ,λ) Trial 2")
 <br/>
-![(μ,λ) Trial 3](images/ML%20Plot%203.png "(μ,λ) Trial 3")
+![(μ,λ) Trial 3](images/ML%20Plot%202.png "(μ,λ) Trial 3")
 <br/>
-![(μ,λ) Trial 4](images/ML%20Plot%204.png "(μ,λ) Trial 4")
+![(μ,λ) Trial 4](images/ML%20Plot%203.png "(μ,λ) Trial 4")
 <br/>
 ![(μ,λ) Trial 5](images/ML%20Plot%205.png "(μ,λ) Trial 5")
 <br/>
