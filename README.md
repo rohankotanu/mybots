@@ -12,19 +12,19 @@ This project used a total of (3 evolutionary algorithms) x (5 trials/evolutionar
 
 This program allows you to run various different evolutionary algorithms.
 
-To run a **Parallel Hill Climber**, simply type:
+To run a **_Parallel Hill Climber_**, simply type:
 
 ```bash
 $ python3 search.py phc
 ```
 
-To run the **(μ,λ) Evolutionary Algorithm**, simply type:
+To run the **_(μ,λ) Evolutionary Algorithm_**, simply type:
 
 ```bash
 $ python3 search.py ml
 ```
 
-To run **Age-Fitness Pareto Optimization**, simply type:
+To run **_Age-Fitness Pareto Optimization_**, simply type:
 
 ```bash
 $ python3 search.py afpo
