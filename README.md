@@ -44,6 +44,7 @@ An exampled of a randomly generated creature vs. a creature evolved using each o
 
 The fitness function is the negative x-position of the first link. The farther left (negative x-direction) the creature travels, the higher its fitness value. The goal of this fitness function is to evolve locomotion in our creatures.
 <br/>
+<br/>
 When testing these algorithms for many generations, the evolutionary algorithm eventually exploited the physics simulator by embedding itself in the ground, which launches the creature upwards at an angle and results in a large displacement in the x-direction. To penalize this behavior, if the body's z-height exceeds 4 at any point during the simulation, the fitness of the creature is set to -5. Such a fitness value is usually low enough for evolution to naturally discard the solution.
 
 
