@@ -101,11 +101,16 @@ For Age-Pareto Fitness Optimization, I once again began with a population size o
 
 Next, all of these 12 individuals have a child. At this point we have the 12 best individuals from the previous generation (based on Pareto levels) and each of their children, so *12 + 12 = 24 individuals.* In order to maintain a population size of 25 in each generation, I add one new, randomly generated individual to this group. This way, each generation has 25 individuals: 24 related to the previous generation and 1 brand new creature.
 
+
 An illustration of this evolutionary algorithm is shown below:
 
-<!-- <br/>
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
-<br/> -->
+
+##### Why Age-Fitness Pareto Optimization Is Beneficial
+The reason this algorithm is so good is that introducing random creatures into the population throughout the evolution process helps to increase genetic diversity. However, introducing a new, randomly generated individual into a population will place it at a disadvantage if you're blindly comparing its fintess to everyone else's fitness. Therefore, we factor in age as well. By selecting individuals that are non-dominated in both fitness AND age, we are able to give younger creatures a "handicap" if they are pretty fit for their age. In the figure below, each lineage is given a different color. Notice that at the end of evolution, the red lineage has the highest fitness. However, the red creature is randomly introduced into the population around generation 25. When it is first introduced, its fitness is quite low compared to everyone else in the population at the time. However, because it was pretty fit given its age, the red lineage was allowed to live on until it eventually evolved into the fittest in the population.
+
+<br/>
+![AFPO Advantage](images/AFPO%20Advantage%.png "AFPO Advantage")
+<br/>
 
 <br/>
 
