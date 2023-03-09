@@ -110,11 +110,11 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 | Trial | Parallel Hill Climber | (μ,λ) | Age-Pareto Fitness Optimization |
 | --- | --- | --- | --- |
-| Trial 1 | 9.220 | 8.319  | 0 |
-| Trial 2 | 9.276 | 4.345  | 0 |
-| Trial 3 | 8.750 | 8.141  | 0 |
-| Trial 4 | 9.344 | 10.531 | 0 |
-| Trial 5 | 9.508 | 0 | 0 |
+| Trial 1 | 9.220 | 10.531 | 0 |
+| Trial 2 | 9.276 | 8.319  | 0 |
+| Trial 3 | 8.750 | 4.345  | 0 |
+| Trial 4 | 9.344 | 8.141  | 0 |
+| Trial 5 | 9.508 | 0      | 0 |
 
 <br/>
 
@@ -122,13 +122,13 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 *How to interpret the graphs:* Each line represents a separate hill climber. For a parallel hill climber with a population size of 25, there are 25 separate hill climbers evolving in parallel.
 
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.png "Parallel Hill Climber Trial 1")
+![Parallel Hill Climber Trial 1](images/PHC%20Plot%204.png "Parallel Hill Climber Trial 1")
 <br/>
-![Parallel Hill Climber Trial 2](images/PHC%20Plot%202.png "Parallel Hill Climber Trial 2")
+![Parallel Hill Climber Trial 2](images/PHC%20Plot%201.png "Parallel Hill Climber Trial 2")
 <br/>
-![Parallel Hill Climber Trial 3](images/PHC%20Plot%203.png "Parallel Hill Climber Trial 3")
+![Parallel Hill Climber Trial 3](images/PHC%20Plot%202.png "Parallel Hill Climber Trial 3")
 <br/>
-![Parallel Hill Climber Trial 4](images/PHC%20Plot%204.png "Parallel Hill Climber Trial 4")
+![Parallel Hill Climber Trial 4](images/PHC%20Plot%203.png "Parallel Hill Climber Trial 4")
 <br/>
 ![Parallel Hill Climber Trial 5](images/PHC%20Plot%205.png "Parallel Hill Climber Trial 5")
 <br/>
