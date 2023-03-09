@@ -135,7 +135,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 On average, the Age-Pareto Fitness Optimization produces the fittest creature. Surprisingly, the Parallel Hill Climber produced more consistent results and a higher average fitness than the (μ,λ) Evolutionary Algorithm.
 
-Plots from all 15 trials (5 from each evolutionary algorithm) are shown below.
+Plots from all 15 trials (5 for each evolutionary algorithm) are shown below.
 
 ### Parallel Hill Climber
 
