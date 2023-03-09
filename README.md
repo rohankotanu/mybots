@@ -55,12 +55,16 @@ When testing these algorithms for many generations, the evolutionary algorithm e
 
 I tested 3 different evolutionary methods. Each method had a population size of 25 and was run for 200 generations. I tested each method 5 times, each with a different random seed.
 
+<br/>
+
 ## Parallel Hill Climber
 
 The Parallel Hill Climber starts off with 25 individuals. Each individual is in a "silo," meaning that it does not interact with the other individuals in the population. In each generation, the parents have children, and the parent is compared against its child. Whichever has a higher fitness, the parent or the child, moves on to the next generation.
 <!-- <br/>
 ![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
 <br/> -->
+
+<br/>
 
 ## (μ,λ) Evolutionary Algorithm
 
@@ -83,6 +87,8 @@ Therefore, I modified this algorithm so that each individual chosen to move onto
 <!-- <br/>
 ![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
 <br/> -->
+
+<br/>
 
 ## Age-Fitness Pareto Optimization
 
@@ -137,24 +143,26 @@ The following table lists the best fitness achieved by the end of 200 generation
 <br/>
 ![(μ,λ) Trial 3](images/ML%20Plot%203.png "(μ,λ) Trial 3")
 <br/>
-![(μ,λ) Trial 4](images/PHC%20Plot%204.png "(μ,λ) Trial 4")
+![(μ,λ) Trial 4](images/ML%20Plot%204.png "(μ,λ) Trial 4")
 <br/>
-![(μ,λ) Trial 5](images/PHC%20Plot%205.png "(μ,λ) Trial 5")
+![(μ,λ) Trial 5](images/ML%20Plot%205.png "(μ,λ) Trial 5")
 <br/>
 <br/>
 
-<!-- ### Parallel Hill Climber
-![Parallel Hill Climber Trial 1](images/PHC%20Plot%201.PNG "Parallel Hill Climber Trial 1")
+### Age-Pareto Fitness Optimization
+*How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of the plot (i.e. it's not branching off another line), that line represents a randomly generated solution. If a line ends randomly, it means that the individual was not fit enough to survive.
+
+![(μ,λ) Trial 1](images/AFPO%20Plot%201.png "(μ,λ) Trial 1")
 <br/>
-![Parallel Hill Climber Trial 2](images/PHC%20Plot%202.PNG "Parallel Hill Climber Trial 2")
+![(μ,λ) Trial 2](images/AFPO%20Plot%202.png "(μ,λ) Trial 2")
 <br/>
-![Parallel Hill Climber Trial 3](images/PHC%20Plot%203.PNG "Parallel Hill Climber Trial 3")
+![(μ,λ) Trial 3](images/AFPO%20Plot%203.png "(μ,λ) Trial 3")
 <br/>
-![Parallel Hill Climber Trial 4](images/PHC%20Plot%204.PNG "Parallel Hill Climber Trial 4")
+![(μ,λ) Trial 4](images/AFPO%20Plot%204.png "(μ,λ) Trial 4")
 <br/>
-![Parallel Hill Climber Trial 5](images/PHC%20Plot%205.PNG "Parallel Hill Climber Trial 5")
+![(μ,λ) Trial 5](images/AFPO%20Plot%205.png "(μ,λ) Trial 5")
 <br/>
-<br/> -->
+<br/>
 
 
 
