@@ -107,7 +107,7 @@ An illustration of this evolutionary algorithm is shown below:
 
 ### Why Age-Fitness Pareto Optimization Is Beneficial
 
-The reason this algorithm is so good is that, by introducing random creatures into the population throughout the evolution process, it helps increase genetic diversity. However, introducing a new, randomly generated individual into a population will place it at a disadvantage if you're blindly comparing its fintess to everyone else's fitness. Therefore, we factor in age as well. By selecting individuals that are non-dominated in both fitness AND age, we are able to give younger creatures a "handicap" if they are pretty fit for their age. In the figure below, each lineage is given a different color. Notice that at the end of evolution, the red lineage has the highest fitness. However, the red creature is randomly introduced into the population around generation 25. When it is first introduced, its fitness is quite low compared to everyone else in the population at the time. However, because it was pretty fit given its age, the red lineage was allowed to live on until it eventually evolved into the fittest in the population.
+The reason this algorithm is so good is that, by introducing random creatures into the population throughout the evolution process, it helps increase genetic diversity. However, introducing a new, randomly generated individual into a population will place it at a disadvantage if you're blindly comparing its fintess against everyone else's fitness. Therefore, we factor in age as well. By selecting for individuals that are non-dominated in both fitness AND age, we are able to give younger creatures a "handicap" if they are pretty fit for their age. In the figure below, each lineage is given a different color. Notice that, at the end of evolution, the red lineage has the highest fitness. However, the red creature is randomly introduced into the population around generation 25. When it is first introduced, its fitness is quite low compared to everyone else in the population at the time. However, because it was pretty fit given its age, the red lineage was allowed to live on until it eventually evolved into the fittest in the population.
 
 ![AFPO Advantage](images/AFPO_Advantage.png "AFPO Advantage")
 <br/>
@@ -177,6 +177,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 <br/>
 
 
+# Creature Morphology
 
 ## Creature Bodies
 
@@ -271,4 +272,4 @@ __Neuron Naming Convention:__
 
 # Note
 
-This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here](https://github.com/jbongard/pyrosim).
+This is a final project for CS396 (*Artififical Life*) at Northwestern University. This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here](https://github.com/jbongard/pyrosim).
