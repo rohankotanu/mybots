@@ -104,11 +104,11 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 | Trial | Parallel Hill Climber | (μ,λ) | Age-Pareto Fitness Optimization |
 | --- | --- | --- | --- |
-| Trial 1 | 9.220  | 8.319 | 0 |
-| Trial 2 | 15.959 | 4.345 | 0 |
-| Trial 3 | 8.750  | 0 | 0 |
-| Trial 4 | 9.344  | 0 | 0 |
-| Trial 5 | 9.508  | 0 | 0 |
+| Trial 1 | 9.220 | 8.319 | 0 |
+| Trial 2 | 9.276 | 4.345 | 0 |
+| Trial 3 | 8.750 | 8.141 | 0 |
+| Trial 4 | 9.344 | 0 | 0 |
+| Trial 5 | 9.508 | 0 | 0 |
 
 <br/>
 
@@ -135,7 +135,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 <br/>
 ![(μ,λ) Trial 2](images/ML%20Plot%202.png "(μ,λ) Trial 2")
 <br/>
-![(μ,λ) Trial 3](images/PHC%20Plot%203.png "(μ,λ) Trial 3")
+![(μ,λ) Trial 3](images/ML%20Plot%203.png "(μ,λ) Trial 3")
 <br/>
 ![(μ,λ) Trial 4](images/PHC%20Plot%204.png "(μ,λ) Trial 4")
 <br/>
