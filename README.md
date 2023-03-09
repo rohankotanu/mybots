@@ -115,7 +115,7 @@ An individual is on the Pareto front if there is no other individual in the popu
 ![Pareto Front](images/ParetoFront.png "Pareto Front")
 <br/>
 
-### What are Pareto Front?
+### What are Pareto Levels?
 
 The Pareto level of an individual is equal to the number of other individual in the population that are more fit AND younger than it. In the diagram below, the highlighted region represents the space of both greater fitness AND lower age. Because there is only 1 individual in the highlighted region, the individual is considered to have a Pareto level of 1.
 
