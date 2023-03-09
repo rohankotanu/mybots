@@ -107,6 +107,21 @@ An illustration of this evolutionary algorithm is shown below:
 ![Age-Fitness Pareto Optimization](images/AFPO_Diagram.png "Age-Fitness Pareto Optimization")
 <br/>
 
+
+### What is a Pareto Front?
+
+An individual is on the Pareto front if there is no other individual in the population that is more fit AND younger than it. In the diagram below, the highlighted region represents the space of both greater fitness AND lower age. Because there are no other individuals in the highlighted region, the individual is considered to be on the Pareto front. The same applies to all of the light blue dots in the plot.
+
+![Pareto Front](images/ParetoFront.png "Pareto Front")
+<br/>
+
+### What are Pareto Front?
+
+The Pareto level of an individual is equal to the number of other individual in the population that are more fit AND younger than it. In the diagram below, the highlighted region represents the space of both greater fitness AND lower age. Because there is only 1 individual in the highlighted region, the individual is considered to have a Pareto level of 1.
+
+![Pareto Levels](images/ParetoLevels.png "Pareto Levels")
+<br/>
+
 ### Why Age-Fitness Pareto Optimization Is Beneficial
 
 The reason this algorithm is so good is that, by introducing random creatures into the population throughout the evolution process, it helps increase genetic diversity. However, introducing a new, randomly generated individual into a population will place it at a disadvantage if you're blindly comparing its fintess against everyone else's fitness. Therefore, we factor in age as well. By selecting for individuals that are non-dominated in both fitness AND age, we are able to give younger creatures a "handicap" if they are pretty fit for their age. In the figure below, each lineage is given a different color. Notice that, at the end of evolution, the red lineage has the highest fitness. However, the red creature is randomly introduced into the population around generation 25. When it is first introduced, its fitness is quite low compared to everyone else in the population at the time. However, because it was pretty fit given its age, the red lineage was allowed to live on until it eventually evolved into the fittest in the population.
