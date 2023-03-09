@@ -36,7 +36,9 @@ $ python3 search.py afpo
 
 ## Demo
 
-An exampled of a randomly generated creature vs. a creature evolved using each of these evolutionary algorithms can be seen [here](https://youtu.be/pOij81OmA5s).
+**10 second version:** An example of a randomly generated creature vs. a creature evolved using each of these evolutionary algorithms can be seen [here](https://youtu.be/pOij81OmA5s).
+
+**2 minute version:** An example of a randomly generated creature vs. a creature evolved using each of these evolutionary algorithms can be seen [here](https://youtu.be/_7sgRzGf3dw).
 
 
 <br/>
