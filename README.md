@@ -1,6 +1,6 @@
-# Evolving 3D Morphologies for Locomotion
+# Comparing Different Evolutionary Algorithms
 
-This program evolves a 3D morphology and associated brain for the purposes of locomotion.
+This final project compares different evolutionary algorithms to see which can develop the best creatures for locomotion.
 
 
 <br/>
@@ -10,19 +10,19 @@ This program evolves a 3D morphology and associated brain for the purposes of lo
 
 This program allows you to run various different evolutionary algorithms.
 
-To run a *Parallel Hill Climber*, simply type:
+To run a **Parallel Hill Climber**, simply type:
 
 ```bash
 $ python3 search.py phc
 ```
 
-To run the *(μ,λ) Evolutionary Algorithm*, simply type:
+To run the **(μ,λ) Evolutionary Algorithm**, simply type:
 
 ```bash
 $ python3 search.py ml
 ```
 
-To run *Age-Fitness Pareto Optimization*, simply type:
+To run **Age-Fitness Pareto Optimization**, simply type:
 
 ```bash
 $ python3 search.py afpo
