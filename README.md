@@ -75,7 +75,7 @@ Typically, each individual chosen to move onto the next generation would have **
 <br/>
 Unfortunately, this leads to a lack of genetic diversity. In the figure below, each of the starting individuals is given a different color, and every future descendent of that individual is given the same color. From this, we can see that after about the 5th generation, only the yellow lineage prevails and all the other lineages die out. This leads to a lack of genetic diversity, which is very important in evolution.
 
-![Mu Lambda Vanilla](images/ML_Vanilla_.PNG "Mu Lambda Vanilla")
+![Mu Lambda Vanilla](images/ML_Vanilla.PNG "Mu Lambda Vanilla")
 <br/>
 
 Therefore, I modified this algorithm so that each individual chosen to move onto the next generation would have **λ/μ - 2** offspring. In this case, that would be **25/5 -1 = 3** offspring per parent. Then, I planted *μ = 5* completely new, random creatures into the population. This way, the total population would be **5 individuals from the previous generation + (3 offspring/parent) x (5 parents) + 5 new/random individuals = 5 + 15 + 5 = 25 total individuals**. Thus, the population size stays constant throughout the generations.
