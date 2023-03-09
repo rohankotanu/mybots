@@ -10,19 +10,19 @@ This program evolves a 3D morphology and associated brain for the purposes of lo
 
 This program allows you to run various different evolutionary algorithms.
 
-To run a Parallel Hill Climber, simply type:
+To run a *Parallel Hill Climber*, simply type:
 
 ```bash
 $ python3 search.py phc
 ```
 
-To run a (μ,λ) evolutionary algorithm, simply type:
+To run the *(μ,λ) Evolutionary Algorithm*, simply type:
 
 ```bash
 $ python3 search.py ml
 ```
 
-To run an Age-Fitness Pareto Optimization, simply type:
+To run *Age-Fitness Pareto Optimization*, simply type:
 
 ```bash
 $ python3 search.py afpo
@@ -123,7 +123,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 <br/>
 
 ### (μ,λ) Evolutionary Algorithm
-*How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of evolution (i.e. it's not branching off another line), that line represents a randomly generated solution.
+*How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of the plot (i.e. it's not branching off another line), that line represents a randomly generated solution. If a line ends randomly, it means that the individual was not fit enough to survive.
 
 ![(μ,λ) Trial 1](images/PHC%20Plot%201.PNG "(μ,λ) Trial 1")
 <br/>
