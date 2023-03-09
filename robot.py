@@ -13,6 +13,7 @@ class ROBOT:
 		self.robotId = p.loadURDF("body" + solutionID + ".urdf")
 		self.nn = NEURAL_NETWORK("brain" + solutionID + ".nndf")
 		self.solutionID = solutionID
+		self.zeroFitness = False
 
 		# Perform setup necessary to use sensors
 		pyrosim.Prepare_To_Simulate(self.robotId)
@@ -56,10 +57,21 @@ class ROBOT:
 		self.nn.Update()
 		#self.nn.Print()
 
-	def Get_Fitness(self):
+	def Check_Height(self):
 		basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
 		basePosition = basePositionAndOrientation[0]
-		xPosition = basePosition[0]
+		zPosition = basePosition[2]
+
+		if zPosition > 4:
+			self.zeroFitness = True
+
+	def Get_Fitness(self):
+		if self.zeroFitness == True:
+			xPosition = 5
+		else:
+			basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+			basePosition = basePositionAndOrientation[0]
+			xPosition = basePosition[0]
 
 		f = open("tmp" + self.solutionID + ".txt", "w")
 		f.write(str(xPosition))

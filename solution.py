@@ -8,10 +8,14 @@ import os
 
 class SOLUTION:
 
-	def __init__(self, nextAvailableID):
+	def __init__(self, nextAvailableID, populationID, generationCreated, age):
 
 		self.myID = nextAvailableID
+		self.populationID = populationID
+		self.generationCreated = generationCreated
+		self.age = age
 
+		#random.seed(3)
 		depth = random.randint(2,5)
 		self.root = BODY(None, 0, depth, depth, None, None)
 		
@@ -20,11 +24,10 @@ class SOLUTION:
 		self.myID = id
 		
 	def Start_Simulation(self, directOrGUI):
-		self.Create_World()
 		self.Create_Body()
 		self.Create_Brain()
-		os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " 2&>1 &")
-		#os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID)  + " &")
+		#os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " 2&>1 &")
+		os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID)  + " &")
 
 	def Wait_For_Simulation_To_End(self):
 		fitnessFileName = "fitness" + str(self.myID) + ".txt"
@@ -36,28 +39,9 @@ class SOLUTION:
 		os.system("rm fitness" + str(self.myID) + ".txt")
 
 	def Mutate(self):
-		self.root.Mutate()
-
-	def Create_World(self):
-		length = 1
-		width = 1
-		height = 1
-
-		x = 0
-		y = 0
-		z = height/2
-
-		pyrosim.Start_SDF("world.sdf")
-
-		pyrosim.Send_Cube(name="Box", pos=[-4,4,z] , size=[length,width,height])
-
-		pyrosim.End()
+		self.root.Mutate(self.root)
 
 	def Create_Body(self):
-		head_length = random.random() + 0.2
-		head_width = random.random() + 0.2
-		head_height = random.random() + 0.2
-
 
 		pyrosim.Start_URDF("body" + str(self.myID) + ".urdf")
 

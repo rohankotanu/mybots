@@ -34,12 +34,10 @@ class SIMULATION:
 			self.robot.Sense(t)
 			self.robot.Think()
 			self.robot.Act(t)
+			self.robot.Check_Height()
 
-
-			#print(t)
 			if self.directOrGUI == "GUI":
 				time.sleep(1/100)
-
 
 	def Get_Fitness(self):
 		self.robot.Get_Fitness()

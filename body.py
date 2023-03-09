@@ -88,14 +88,15 @@ class BODY:
 
 
 
-	def Mutate(self):
+	def Mutate(self, root):
 		# Remove a link with probability 0.1
-		if self.depth != self.totalDepth and random.random() < 0.01:
-			#print("trying to remove", self.index)
-			self.Remove(copy.deepcopy(self.linksBelow))
+		if self.depth != self.totalDepth and len(root.linksBelow) > 2 and random.random() < 0.01:
+			# # print("trying to remove", self.index)
+			# self.Remove(copy.deepcopy(self.linksBelow))
 			
-			if self.parent != None:
-				self.parent.children.remove(self)
+			# if self.parent != None:
+			# 	self.parent.children.remove(self)
+			pass
 		else:
 			# Add a link with probability 0.1
 			if random.random() < 0.1:
@@ -113,7 +114,6 @@ class BODY:
 					self.children.append(child)
 
 					self.Add(child, True)
-				pass
 
 
 			# Change length of cube with probability 0.3
@@ -154,7 +154,7 @@ class BODY:
 
 
 			for child in self.children:
-				child.Mutate()
+				child.Mutate(root)
 
 
 	def Remove(self, linksToRemove):

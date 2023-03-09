@@ -16,7 +16,7 @@ class PARALLEL_HILL_CLIMBER:
 		self.parents = {}
 
 		for populationID in range(c.populationSize):
-			self.parents[populationID] = SOLUTION(self.nextAvailableID)
+			self.parents[populationID] = SOLUTION(self.nextAvailableID, 0, 0, 0)
 			self.nextAvailableID += 1
 
 		self.fitness_over_time = np.zeros((c.populationSize, c.numberOfGenerations))

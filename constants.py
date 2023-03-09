@@ -1,23 +1,8 @@
 import numpy as np
 
-# # Parameters for front leg motion
-# frontLeg_amplitude = np.pi/4
-# frontLeg_frequency = 10
-# frontLeg_phaseOffset = 0
-
-# # Parameters for back leg motion
-# backLeg_amplitude = np.pi/4
-# backLeg_frequency = 1
-# backLeg_phaseOffset = np.pi/4
-
-amplitude = np.pi/4
-frequency = 1
-phaseOffset = np.pi/4
-
-numberOfGenerations = 1000
-populationSize = 5
-
-numSensorNeurons = 11
-numMotorNeurons = 10
+# Evolution Parameters
+populationSize = 25 # aka: lambda
+mu = 5
+numberOfGenerations = 1
 
 motorJointRange = 0.6
