@@ -110,7 +110,7 @@ An illustration of this evolutionary algorithm is shown below:
 The reason this algorithm is so good is that introducing random creatures into the population throughout the evolution process helps to increase genetic diversity. However, introducing a new, randomly generated individual into a population will place it at a disadvantage if you're blindly comparing its fintess to everyone else's fitness. Therefore, we factor in age as well. By selecting individuals that are non-dominated in both fitness AND age, we are able to give younger creatures a "handicap" if they are pretty fit for their age. In the figure below, each lineage is given a different color. Notice that at the end of evolution, the red lineage has the highest fitness. However, the red creature is randomly introduced into the population around generation 25. When it is first introduced, its fitness is quite low compared to everyone else in the population at the time. However, because it was pretty fit given its age, the red lineage was allowed to live on until it eventually evolved into the fittest in the population.
 
 <br/>
-![AFPO Advantage](images/AFPO_Advantage%.png "AFPO Advantage")
+![AFPO Advantage](images/AFPO_Advantage.png "AFPO Advantage")
 <br/>
 
 <br/>
