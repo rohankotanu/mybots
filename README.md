@@ -298,4 +298,4 @@ __Neuron Naming Convention:__
 
 # Note
 
-This is a final project for CS396 (*Artififical Life*) at Northwestern University. This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here](https://github.com/jbongard/pyrosim).
+This is a final project for CS396 (*Artififical Life*) at Northwestern University. This project is based on a massively open online course (MOOC) on reddit called [Ludobots](https://www.reddit.com/r/ludobots/wiki/installation/). It also builds on the Pyrosim library which can be found [here](https://github.com/jbongard/pyrosim). Information on the (μ,λ) Evolutionary Algorithm can be viewed [here](https://aicorespot.io/evolution-strategies-from-the-ground-up-in-python/).
