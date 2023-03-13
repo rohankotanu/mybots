@@ -101,7 +101,7 @@ An illustration of this evolutionary algorithm is shown below:
 
 ## Age-Fitness Pareto Optimization
 
-For Age-Pareto Fitness Optimization, I once again began with a population size of 25. From this population, I chose the 12 best individuals through the following process: I gathered the individuals along the Pareto front, which have a Pareto level of 0. If I still don't have 12 individuals, I continue recruiting individuals with a Pareto level of 1, then a Pareto level of 2, and so on until I have a group of 12 individuals.
+For Age-Fitness Pareto Optimization, I once again began with a population size of 25. From this population, I chose the 12 best individuals through the following process: I gathered the individuals along the Pareto front, which have a Pareto level of 0. If I still don't have 12 individuals, I continue recruiting individuals with a Pareto level of 1, then a Pareto level of 2, and so on until I have a group of 12 individuals.
 
 Next, all of these 12 individuals have a child. At this point we have the 12 best individuals from the previous generation (based on Pareto levels) and each of their children, so *12 + 12 = 24 individuals.* In order to maintain a population size of 25 in each generation, I add one new, randomly generated individual to this group. This way, each generation has 25 individuals: 24 related to the previous generation and 1 brand new creature.
 
@@ -152,7 +152,7 @@ The following table lists the best fitness achieved by the end of 200 generation
 
 <br/>
 
-On average, the Age-Pareto Fitness Optimization produces the fittest creature. Surprisingly, the Parallel Hill Climber produced more consistent results and a higher average fitness than the (μ,λ) Evolutionary Algorithm.
+On average, the Age-Fitness Pareto Optimization produces the fittest creature. Surprisingly, the Parallel Hill Climber produced more consistent results and a higher average fitness than the (μ,λ) Evolutionary Algorithm.
 
 Plots from all 15 trials (5 for each evolutionary algorithm) are shown below.
 
@@ -187,7 +187,7 @@ Plots from all 15 trials (5 for each evolutionary algorithm) are shown below.
 <br/>
 <br/>
 
-### Age-Pareto Fitness Optimization
+### Age-Fitness Pareto Optimization
 *How to interpret the graphs:* Each line represents an individual over the course of evolution. If the individual has a child, the child stems off from its parent line in a new color. If a line randomly begins in the middle of the plot (i.e. it's not branching off another line), that line represents a randomly generated solution. If a line ends randomly, it means that the individual was not fit enough to survive.
 
 ![AFPO Trial 1](images/AFPO%20Plot%201.png "AFPO Trial 1")
